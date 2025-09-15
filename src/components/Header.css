@@ -1,0 +1,15 @@
+.header-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.header-image {
+  width: 100%;
+  min-width: 850px;
+  max-width: 850px;
+  height: auto;
+  display: block;
+}
