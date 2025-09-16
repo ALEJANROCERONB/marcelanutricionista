@@ -5,8 +5,7 @@ import dos from "../assets/content/2.png";
 import tres from "../assets/content/3.png";
 import cuatro from "../assets/content/4.png";
 import cinco from "../assets/content/5.png";
-import videobienvenida from "../assets/videos/videobienvenida.mp4";
-import lifequote from "../assets/content/lifequote.png";
+import lifequote from "../assets/lifequote.png";
 
 const images = [uno, dos, tres, cuatro, cinco];
 
@@ -51,12 +50,18 @@ function Content() {
         />
       </div>
 
-      {/* Segunda fila - Columna izquierda - Video de bienvenida */}
+      {/* Segunda fila - Columna izquierda - Video de bienvenida (YouTube) */}
       <div className="left-lower">
-        <video className="video-content" controls>
-          <source src={videobienvenida} type="video/mp4" />
-          Tu navegador no soporta la reproducción de videos.
-        </video>
+        <div className="video-wrapper">
+          <iframe
+            className="video-content"
+            src="https://www.youtube.com/embed/kMrUCQL1M4c"
+            title="Video de bienvenida"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       {/* Segunda fila - Columna derecha - Imagen Quote */}

@@ -98,11 +98,4 @@
   opacity: 1;
 }
 
-/* Estilos para el video */
-.video-content {
-  width: 100%;
-  height: auto;
-  max-height: 225px; /* Limita la altura */
-  border-radius: 5px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
+
