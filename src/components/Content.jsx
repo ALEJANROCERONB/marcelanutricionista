@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Content.css"; // Estilos separados
-import Quote from "../assets/quote.png";
+import quote from "../assets/quote.png";
 import uno from "../assets/content/1.png";
 import dos from "../assets/content/2.png";
 import tres from "../assets/content/3.png";
@@ -61,7 +61,7 @@ function Content() {
 
       {/* Segunda fila - Columna derecha - Imagen Quote */}
       <div className="right-lower">
-        <img src={Quote} alt="Quote" className="quote" />
+        <img src={quote} alt="Quote" className="quote" />
       </div>
     </div>
   );
