@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Content.css"; // Estilos separados
-import quote from "../assets/quote.png";
 import uno from "../assets/content/1.png";
 import dos from "../assets/content/2.png";
 import tres from "../assets/content/3.png";
 import cuatro from "../assets/content/4.png";
 import cinco from "../assets/content/5.png";
 import videobienvenida from "../assets/videos/videobienvenida.mp4";
+import lifequote from "../assets/content/lifequote.png";
 
 const images = [uno, dos, tres, cuatro, cinco];
 
@@ -61,7 +61,7 @@ function Content() {
 
       {/* Segunda fila - Columna derecha - Imagen Quote */}
       <div className="right-lower">
-        <img src={quote} alt="Quote" className="quote" />
+        <img src={lifequote} alt="Quote" className="quote" />
       </div>
     </div>
   );
