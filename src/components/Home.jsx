@@ -1,5 +1,5 @@
 import Content from "./Content";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, MapPin } from "lucide-react";
 import Header from "./Header";
 import "./Home.css";
 
@@ -9,30 +9,42 @@ export default function Home() {
       <Header />
       <Content />
 
-      <div className="home-info">
-        <div className="social-icons">
-          <span>REDES SOCIALES:</span>
-          <a
-            href="https://www.instagram.com/nutri_marcelas"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <Instagram size={30} color="#E4405F" />
-          </a>
-          <a
-            href="https://wa.me/+573172606180"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-          >
-            <MessageCircle size={30} color="#25D366" />
-          </a>
-        </div>
+      <div className="contact-strip">
+        <div className="contact-strip-inner">
+          <div className="contact-strip-block">
+            <p className="contact-strip-label">Sígueme en redes</p>
+            <div className="social-icons">
+              <a
+                href="https://www.instagram.com/nutri_marcelas"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="social-icon"
+              >
+                <Instagram size={22} />
+              </a>
+              <a
+                href="https://wa.me/+573172606180"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="social-icon"
+              >
+                <MessageCircle size={22} />
+              </a>
+            </div>
+          </div>
 
-        <p className="home-address">
-          POPAYÁN CAUCA COLOMBIA - CALLE 18 NORTE CON CARRERA 12
-        </p>
+          <div className="contact-strip-divider" aria-hidden="true"></div>
+
+          <div className="contact-strip-block">
+            <p className="contact-strip-label">Ubicación</p>
+            <p className="home-address">
+              <MapPin size={18} />
+              Popayán, Cauca, Colombia — Calle 18 Norte con Carrera 12
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -43,7 +43,7 @@
   margin: 0 0 6px;
   font-size: clamp(0.95rem, 1.6vw, 1.05rem);
   font-weight: 600;
-  color: #677ce0;
+  color: var(--color-accent);
   letter-spacing: 0.02em;
 }
 
@@ -52,11 +52,11 @@
   font-size: clamp(2.4rem, 6vw, 3.6rem);
   line-height: 1.08;
   font-weight: 800;
-  color: #1a2036;
+  color: var(--color-ink);
 }
 
 .hero-name span {
-  color: #677ce0;
+  color: var(--color-accent);
 }
 
 .hero-subtitle {
@@ -65,7 +65,7 @@
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 500;
   line-height: 1.5;
-  color: #555c6e;
+  color: var(--color-body);
 }
 
 /* ---------- Credenciales ---------- */
@@ -85,16 +85,16 @@
   gap: 8px;
   background: #fff;
   border: 1px solid rgba(103, 124, 224, 0.25);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   padding: 8px 16px;
   font-size: 0.85rem;
   font-weight: 600;
   color: #333c58;
-  box-shadow: 0 2px 8px rgba(26, 32, 54, 0.06);
+  box-shadow: var(--shadow-sm);
 }
 
 .credential-chip svg {
-  color: #677ce0;
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
@@ -104,20 +104,20 @@
   display: inline-block;
   margin-top: 30px;
   padding: 14px 32px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #7c88e8, #5c68d6);
+  border-radius: var(--radius-pill);
+  background: var(--gradient-accent);
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(92, 104, 214, 0.35);
+  box-shadow: var(--shadow-md);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-cta:hover {
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(92, 104, 214, 0.42);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ---------- Foto ---------- */
@@ -155,5 +155,5 @@
   object-fit: contain;
   clip-path: inset(0 0 0 1%);
   display: block;
-  filter: drop-shadow(0 18px 30px rgba(26, 32, 54, 0.18));
+  filter: drop-shadow(var(--shadow-lg));
 }

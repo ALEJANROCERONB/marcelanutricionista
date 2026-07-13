@@ -5,17 +5,17 @@
 .navbar {
   width: 100%;
   height: var(--navbar-height);
-  background-color: #abb4e0;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(26, 32, 54, 0.08);
 }
 
 .navbar-inner {
   height: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -24,56 +24,64 @@
 }
 
 .navbar-brand {
-  color: #fff;
-  font-weight: bold;
+  color: var(--color-ink);
+  font-weight: 800;
   font-size: 18px;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.navbar-brand:hover {
+  color: var(--color-ink);
 }
 
 .navbar-toggle {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-ink);
   cursor: pointer;
   padding: 6px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
 }
 
 .navbar-toggle:hover,
 .navbar-toggle:focus-visible {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-accent-soft);
   outline: none;
+  transform: none;
+  box-shadow: none;
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   padding: 0;
   margin: 0;
 }
 
 .navbar-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: var(--color-body);
+  font-weight: 600;
   font-size: 15px;
-  padding: 10px 22px;
-  border-radius: 5px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
   transition: background 0.3s ease, color 0.3s ease;
   display: inline-block;
 }
 
 .navbar-links a.active-link {
-  background-color: #8b93b9;
+  background: var(--gradient-accent);
   color: #fff;
 }
 
-.navbar-links a:hover {
-  background-color: rgba(139, 147, 185, 0.5);
+.navbar-links a:hover:not(.active-link) {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-dark);
 }
 
 @media (max-width: 767px) {
@@ -88,12 +96,13 @@
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    gap: 0;
-    background-color: #abb4e0;
+    gap: 4px;
+    padding: 8px 16px;
+    background-color: #fff;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(26, 32, 54, 0.08);
   }
 
   .navbar-links.open {
@@ -106,12 +115,8 @@
 
   .navbar-links a {
     display: block;
-    padding: 16px 0;
-    border-radius: 0;
+    padding: 14px 0;
+    border-radius: var(--radius-sm);
     text-align: center;
-  }
-
-  .navbar-links a:hover {
-    background-color: rgba(139, 147, 185, 0.7);
   }
 }

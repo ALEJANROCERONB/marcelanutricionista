@@ -1,31 +1,97 @@
-.home-info {
-  padding: 0 16px 32px;
+.contact-strip {
+  background: var(--color-accent-soft);
+  padding: 40px 16px;
+  margin-top: 8px;
+}
+
+.contact-strip-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  .contact-strip-inner {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+.contact-strip-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 700px) {
+  .contact-strip-block {
+    align-items: flex-start;
+  }
+}
+
+.contact-strip-label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.contact-strip-divider {
+  width: 48px;
+  height: 1px;
+  background: rgba(103, 124, 224, 0.3);
+}
+
+@media (min-width: 700px) {
+  .contact-strip-divider {
+    width: 1px;
+    height: 56px;
+  }
 }
 
 .social-icons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 12px;
-  font-weight: 600;
-  color: #333;
+  gap: 12px;
 }
 
-.social-icons a {
+.social-icon {
   display: inline-flex;
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.social-icons a:hover {
-  transform: scale(1.1);
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--color-accent-dark);
 }
 
 .home-address {
-  font-size: 14px;
-  color: #555;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-body);
+}
+
+.home-address svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
 }

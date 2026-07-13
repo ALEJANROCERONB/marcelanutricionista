@@ -25,34 +25,53 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      <h1>Contacto</h1>
+      <div className="section-head">
+        <p className="section-kicker">Hablemos</p>
+        <h1>Contacto</h1>
+        <p className="contact-subtitle">
+          Escríbeme por el medio que prefieras, con gusto te respondo.
+        </p>
+      </div>
 
-      <div className="contact-item">
-        <Phone size={24} />
+      <div className="contact-grid">
         <a
+          className="contact-item"
           href="https://wa.me/573172606180"
           target="_blank"
           rel="noopener noreferrer"
         >
-          WhatsApp: +57 317 260 6180
+          <span className="contact-item-icon">
+            <Phone size={22} />
+          </span>
+          <span className="contact-item-text">
+            <span className="contact-item-label">WhatsApp</span>
+            <span className="contact-item-value">+57 317 260 6180</span>
+          </span>
         </a>
-      </div>
 
-      <div className="contact-item">
-        <Mail size={24} />
-        <a href="mailto:marcelasolano1204@gmail.com">
-          Correo: marcelasolano1204@gmail.com
+        <a className="contact-item" href="mailto:marcelasolano1204@gmail.com">
+          <span className="contact-item-icon">
+            <Mail size={22} />
+          </span>
+          <span className="contact-item-text">
+            <span className="contact-item-label">Correo</span>
+            <span className="contact-item-value">marcelasolano1204@gmail.com</span>
+          </span>
         </a>
-      </div>
 
-      <div className="contact-item">
-        <Instagram size={24} />
         <a
+          className="contact-item"
           href="https://www.instagram.com/nutri_marcelas"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Instagram: @nutri_marcelas
+          <span className="contact-item-icon">
+            <Instagram size={22} />
+          </span>
+          <span className="contact-item-text">
+            <span className="contact-item-label">Instagram</span>
+            <span className="contact-item-value">@nutri_marcelas</span>
+          </span>
         </a>
       </div>
 

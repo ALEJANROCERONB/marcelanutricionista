@@ -21,51 +21,57 @@ function Content() {
   }, []);
 
   return (
-    <div className="content-container">
-      {/* Primera fila - Columna izquierda - Descripción */}
-      <div className="description">
-        <p>
-          Dietista con MASTER EN NUTRICIÓN clínica de la universidad europea en
-          España, también tengo certificación en diabetes y oncología. Y he
-          realizado mi internado en la clínica Imbanaco. Durante mi formación
-          académica he adquirido conocimientos sobre el manejo dietoterapéutico
-          individualizado a las necesidades del paciente, en el desarrollo de
-          mis consultas siempre busco el bienestar integral del paciente,
-          indagando lo suficiente para determinar cuál es el mejor tratamiento
-          para llevar a cabo por medio de un plan dietario saludable, sin
-          restricciones ni excesos, disfrutando de la gran variedad de alimentos
-          que se pueden aprovechar.
-        </p>
+    <div className="content-section">
+      <div className="section-head">
+        <p className="section-kicker">Sobre mí</p>
+        <h2 className="section-title">Un acompañamiento nutricional cercano</h2>
       </div>
 
-      {/* Primera fila - Columna derecha - Slideshow */}
-      <div className="slideshow-container">
-        <div className="slideshow-overlay">
-          ¡CONTAMOS CON EQUIPO DE BIOIMPEDANCIA!
+      <div className="content-container">
+        {/* Primera fila - Columna izquierda - Descripción */}
+        <div className="content-card description-card">
+          <p>
+            Dietista con MASTER EN NUTRICIÓN clínica de la universidad europea
+            en España, también tengo certificación en diabetes y oncología. Y
+            he realizado mi internado en la clínica Imbanaco. Durante mi
+            formación académica he adquirido conocimientos sobre el manejo
+            dietoterapéutico individualizado a las necesidades del paciente,
+            en el desarrollo de mis consultas siempre busco el bienestar
+            integral del paciente, indagando lo suficiente para determinar
+            cuál es el mejor tratamiento para llevar a cabo por medio de un
+            plan dietario saludable, sin restricciones ni excesos,
+            disfrutando de la gran variedad de alimentos que se pueden
+            aprovechar.
+          </p>
         </div>
-        <img
-          src={images[currentIndex]}
-          alt="Equipo de bioimpedancia"
-          className="slideshow-image"
-        />
-      </div>
 
-      {/* Segunda fila - Columna izquierda - Video de bienvenida (YouTube) */}
-      <div className="left-lower">
-        <div className="video-wrapper">
-          <iframe
-            className="video-content"
-            src="https://www.youtube.com/embed/kMrUCQL1M4c"
-            title="Video de bienvenida"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        {/* Primera fila - Columna derecha - Slideshow */}
+        <div className="content-card slideshow-container">
+          <span className="content-badge">Equipo de bioimpedancia</span>
+          <img
+            src={images[currentIndex]}
+            alt="Equipo de bioimpedancia"
+            className="slideshow-image"
+          />
         </div>
-      </div>
 
-      {/* Segunda fila - Columna derecha - Imagen Quote */}
-      <div className="right-lower">
-        <img src={lifequote} alt="Quote" className="quote" />
+        {/* Segunda fila - Columna izquierda - Video de bienvenida (YouTube) */}
+        <div className="content-card video-card">
+          <div className="video-wrapper">
+            <iframe
+              className="video-content"
+              src="https://www.youtube.com/embed/kMrUCQL1M4c"
+              title="Video de bienvenida"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Segunda fila - Columna derecha - Imagen Quote */}
+        <div className="content-card quote-card">
+          <img src={lifequote} alt="Quote" className="quote" />
+        </div>
       </div>
     </div>
   );

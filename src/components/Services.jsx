@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { ChevronDown, Activity, UserCheck, Video } from "lucide-react";
 import equipoImg from "../assets/equipo.png";
 import "./Services.css";
 
-const ServiceItem = ({ title, content }) => {
+const ServiceItem = ({ title, icon, content }) => {
+  const Icon = icon;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen((prev) => !prev);
 
   return (
-    <div className="service-container">
+    <div className={`service-container ${isOpen ? "is-open" : ""}`}>
       <div
         className="service-header"
         role="button"
@@ -23,12 +24,11 @@ const ServiceItem = ({ title, content }) => {
           }
         }}
       >
+        <span className="service-icon-badge">
+          <Icon size={20} />
+        </span>
         <h2 className="service-title">{title}</h2>
-        {isOpen ? (
-          <FaChevronUp className="service-icon" />
-        ) : (
-          <FaChevronDown className="service-icon" />
-        )}
+        <ChevronDown className="service-chevron" size={20} />
       </div>
       {isOpen && <div className="service-content">{content}</div>}
     </div>
@@ -38,11 +38,19 @@ const ServiceItem = ({ title, content }) => {
 function Services() {
   return (
     <div className="services-main">
-      <h1 className="services-title">Nuestros Servicios</h1>
+      <div className="section-head">
+        <p className="section-kicker">Lo que ofrezco</p>
+        <h1 className="services-title">Nuestros servicios</h1>
+        <p className="services-subtitle">
+          Planes de acompañamiento nutricional adaptados a cada objetivo,
+          presenciales o virtuales.
+        </p>
+      </div>
       <div className="services-wrapper">
         {/* Examen Médico */}
         <ServiceItem
           title="Examen Médico"
+          icon={Activity}
           content={
             <>
               <img
@@ -106,6 +114,7 @@ function Services() {
         {/* Consulta Nutricional Presencial */}
         <ServiceItem
           title="Consulta Nutricional Presencial"
+          icon={UserCheck}
           content={
             <>
               <p>El servicio incluye:</p>
@@ -134,6 +143,7 @@ function Services() {
         {/* Consulta Nutricional Virtual */}
         <ServiceItem
           title="Consulta Nutricional Virtual"
+          icon={Video}
           content={
             <>
               <p>El servicio incluye:</p>
