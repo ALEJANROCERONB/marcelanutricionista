@@ -30,7 +30,7 @@ function Header() {
           ))}
         </ul>
 
-        <Link to="/contact" className="hero-cta">
+        <Link to="/contact" className="btn-primary hero-cta">
           Agenda tu consulta
         </Link>
       </div>

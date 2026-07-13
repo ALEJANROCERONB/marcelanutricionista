@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-import "./Content.css"; // Estilos separados
+import "./About.css";
 import uno from "../assets/content/1.png";
 import dos from "../assets/content/2.png";
 import tres from "../assets/content/3.png";
 import cuatro from "../assets/content/4.png";
 import cinco from "../assets/content/5.png";
-import lifequote from "../assets/lifequote.png";
 
 const images = [uno, dos, tres, cuatro, cinco];
 
-function Content() {
+function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -21,15 +20,14 @@ function Content() {
   }, []);
 
   return (
-    <div className="content-section">
+    <div className="about-section">
       <div className="section-head">
         <p className="section-kicker">Sobre mí</p>
         <h2 className="section-title">Un acompañamiento nutricional cercano</h2>
       </div>
 
-      <div className="content-container">
-        {/* Primera fila - Columna izquierda - Descripción */}
-        <div className="content-card description-card">
+      <div className="about-container">
+        <div className="about-card description-card">
           <p>
             Dietista con MASTER EN NUTRICIÓN clínica de la universidad europea
             en España, también tengo certificación en diabetes y oncología. Y
@@ -45,8 +43,7 @@ function Content() {
           </p>
         </div>
 
-        {/* Primera fila - Columna derecha - Slideshow */}
-        <div className="content-card slideshow-container">
+        <div className="about-card slideshow-container">
           <span className="content-badge">Equipo de bioimpedancia</span>
           <img
             src={images[currentIndex]}
@@ -54,27 +51,9 @@ function Content() {
             className="slideshow-image"
           />
         </div>
-
-        {/* Segunda fila - Columna izquierda - Video de bienvenida (YouTube) */}
-        <div className="content-card video-card">
-          <div className="video-wrapper">
-            <iframe
-              className="video-content"
-              src="https://www.youtube.com/embed/kMrUCQL1M4c"
-              title="Video de bienvenida"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-
-        {/* Segunda fila - Columna derecha - Imagen Quote */}
-        <div className="content-card quote-card">
-          <img src={lifequote} alt="Quote" className="quote" />
-        </div>
       </div>
     </div>
   );
 }
 
-export default Content;
+export default About;

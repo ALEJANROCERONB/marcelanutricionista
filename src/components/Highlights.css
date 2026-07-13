@@ -1,0 +1,49 @@
+.video-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 3.5rem;
+  text-align: center;
+}
+
+.video-frame {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 10px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.video-content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.quote-banner {
+  width: 100%;
+  background: var(--color-accent-soft);
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.quote-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}

@@ -1,7 +1,6 @@
 .contact-strip {
   background: var(--color-accent-soft);
-  padding: 40px 16px;
-  margin-top: 8px;
+  padding: 56px 16px;
 }
 
 .contact-strip-inner {
@@ -10,12 +9,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
+}
+
+.contact-strip-cta {
+  text-align: center;
+}
+
+.contact-strip-kicker {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.contact-strip-title {
+  margin: 0 0 20px;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.contact-strip-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 24px;
   text-align: center;
 }
 
 @media (min-width: 700px) {
-  .contact-strip-inner {
+  .contact-strip-info {
     flex-direction: row;
     justify-content: center;
     text-align: left;

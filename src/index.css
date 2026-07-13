@@ -77,3 +77,23 @@ button:focus-visible {
   outline: 3px solid var(--color-accent-dark);
   outline-offset: 2px;
 }
+
+/* ---------- Botón CTA compartido (para <a> estilizados como botón) ---------- */
+.btn-primary {
+  display: inline-block;
+  border-radius: var(--radius-pill);
+  padding: 14px 32px;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
