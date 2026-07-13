@@ -37,6 +37,30 @@
   line-height: 1.5;
 }
 
+.value-props {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  margin: 0 0 36px;
+  padding: 0;
+}
+
+.value-prop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-body);
+}
+
+.value-prop svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
 .services-wrapper {
   width: 100%;
   max-width: 800px;
@@ -130,4 +154,24 @@
   .service-content {
     padding-left: 22px;
   }
+}
+
+.services-cta {
+  text-align: center;
+  margin-top: 44px;
+}
+
+.services-cta-kicker {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.services-cta-title {
+  margin: 0 0 20px;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: var(--color-ink);
 }

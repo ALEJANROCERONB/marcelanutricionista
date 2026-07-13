@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ChevronDown, Heart, MessageCircle, ShieldCheck } from "lucide-react";
 import { services } from "../data/servicesData";
 import "./Services.css";
+
+const valueProps = [
+  { icon: Heart, text: "Atención 100% personalizada" },
+  { icon: MessageCircle, text: "Seguimiento continuo por WhatsApp" },
+  { icon: ShieldCheck, text: "Equipo validado internacionalmente" },
+];
 
 const ServiceItem = ({ title, icon, content }) => {
   const Icon = icon;
@@ -46,6 +53,19 @@ function Services() {
           presenciales o virtuales.
         </p>
       </div>
+
+      <ul className="value-props">
+        {valueProps.map((prop) => {
+          const Icon = prop.icon;
+          return (
+            <li key={prop.text} className="value-prop">
+              <Icon size={20} />
+              <span>{prop.text}</span>
+            </li>
+          );
+        })}
+      </ul>
+
       <div className="services-wrapper">
         {services.map((service) => (
           <ServiceItem
@@ -55,6 +75,14 @@ function Services() {
             content={service.content}
           />
         ))}
+      </div>
+
+      <div className="services-cta">
+        <p className="services-cta-kicker">¿Lista para comenzar?</p>
+        <h2 className="services-cta-title">Empecemos tu plan nutricional</h2>
+        <Link to="/contact" className="btn-primary">
+          Agenda tu consulta
+        </Link>
       </div>
     </div>
   );
