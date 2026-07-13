@@ -57,7 +57,6 @@ function Content() {
             className="video-content"
             src="https://www.youtube.com/embed/kMrUCQL1M4c"
             title="Video de bienvenida"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

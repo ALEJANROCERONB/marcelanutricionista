@@ -5,23 +5,22 @@ import "./Contact.css";
 
 function Contact() {
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | error | sent
 
   const handleSendMessage = () => {
     if (message.trim() === "") {
-      alert("Por favor, escribe un mensaje antes de enviar.");
+      setStatus("error");
       return;
     }
 
-    // Simula el envío de correo con mailto:
     const subject = encodeURIComponent("Tengo dudas sobre tus servicios");
     const body = encodeURIComponent(message);
     const mailtoLink = `mailto:marcelasolano1204@gmail.com?subject=${subject}&body=${body}`;
 
-    // Abrir cliente de correo
     window.location.href = mailtoLink;
 
-    // Limpia el campo después de abrir el correo
     setMessage("");
+    setStatus("sent");
   };
 
   return (
@@ -62,9 +61,23 @@ function Contact() {
         <textarea
           placeholder="Escribe tu mensaje aquí..."
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) => {
+            setMessage(e.target.value);
+            if (status !== "idle") setStatus("idle");
+          }}
         ></textarea>
         <button onClick={handleSendMessage}>Enviar</button>
+
+        {status === "error" && (
+          <p className="form-status form-status-error" role="alert">
+            Por favor, escribe un mensaje antes de enviar.
+          </p>
+        )}
+        {status === "sent" && (
+          <p className="form-status form-status-success" role="status">
+            Se abrió tu cliente de correo con el mensaje listo para enviar.
+          </p>
+        )}
       </div>
     </div>
   );

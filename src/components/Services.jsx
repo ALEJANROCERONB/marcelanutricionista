@@ -1,13 +1,28 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import equipoImg from "../assets/equipo.png";
+import "./Services.css";
 
 const ServiceItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggle = () => setIsOpen((prev) => !prev);
+
   return (
     <div className="service-container">
-      <div className="service-header" onClick={() => setIsOpen(!isOpen)}>
+      <div
+        className="service-header"
+        role="button"
+        tabIndex={0}
+        aria-expanded={isOpen}
+        onClick={toggle}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        }}
+      >
         <h2 className="service-title">{title}</h2>
         {isOpen ? (
           <FaChevronUp className="service-icon" />
@@ -149,103 +164,3 @@ function Services() {
 }
 
 export default Services;
-
-/* Estilos en el mismo archivo */
-const styles = `
-  .services-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    width: 100vw;
-    text-align: center;
-    background-color: #f4f4f4;
-    padding: 50px 20px 20px;
-    box-sizing: border-box;
-    gap: 25px;
-  }
-
-  .services-title {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    margin-top: 0;
-    color: #677CE0;
-  }
-
-  .services-wrapper {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgb(187, 188, 189);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .service-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .service-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #677CE0;
-  }
-
-  .service-icon {
-    color: #677CE0;
-  }
-
-  .service-content {
-    margin-top: 5px;
-    color: rgb(18, 18, 18);
-    text-align: left;
-    width: 100%;
-    max-width: 700px;
-    font-size: 0.95rem; /* Reduce ligeramente el tamaño del texto */
-    line-height: 1.4; /* Reduce la separación entre líneas */
-  }
-
-  .service-content p {
-    margin-bottom: 8px; /* Reduce espacio entre párrafos */
-  }
-
-  .service-content ul {
-    padding-left: 20px;
-    margin-bottom: 8px;
-  }
-
-  .service-content li {
-    margin-bottom: 3px;
-  }
-
-  .service-image {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-  margin: 0 auto 15px;
-    border-radius: 12px;
-    align-self: center
-  }
-`;
-
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);

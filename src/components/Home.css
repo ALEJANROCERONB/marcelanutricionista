@@ -1,0 +1,31 @@
+.home-info {
+  padding: 0 16px 32px;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.social-icons a {
+  display: inline-flex;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.home-address {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}

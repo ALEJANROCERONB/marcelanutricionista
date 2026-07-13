@@ -2,21 +2,27 @@
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
+  padding: 0 16px;
   border-radius: 8px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-  grid-template-rows: auto auto; /* Dos filas para dividir cada columna */
-  gap: 20px; /* Espaciado entre los elementos */
-  margin-bottom: 5rem;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 3rem;
 }
 
-/* Primera fila - Columna izquierda (Descripción) */
+@media (min-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Descripción */
 .description {
   background-color: #abb4e0;
   padding: 15px;
   border-radius: 5px;
   color: white;
-  line-height: 1.2;
+  line-height: 1.4;
   word-break: break-word;
   font-size: 15px;
   text-align: justify;
@@ -24,66 +30,74 @@
   align-items: center;
 }
 
-/* Primera fila - Columna derecha (Caja vacía) */
-.empty-box {
-  background-color: #e0e0e0; /* Color gris claro como referencia */
-  padding: 15px;
-  border-radius: 5px;
-  min-height: 100px; /* Ajusta el tamaño según lo necesites */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Segunda fila - Columna izquierda (Espacio vacío para futura incorporación) */
+/* Video de bienvenida */
 .left-lower {
-  background-color: #f0f0f0; /* Color gris claro para visualización */
-  padding: 15px;
+  background-color: #f0f0f0;
   border-radius: 5px;
-  min-height: 100px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Segunda fila - Columna derecha (Imagen Quote) */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.video-content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Imagen quote */
 .right-lower {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 15rem;
 }
 
 .quote {
   width: 100%;
-  height: 15rem;
+  height: auto;
   display: block;
+  border-radius: 5px;
 }
 
-/* Slideshow - Columna derecha */
+/* Slideshow */
 .slideshow-container {
   position: relative;
   width: 100%;
-  height: 250px; /* Ajusta según necesidad */
+  aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #e0e0e0; /* Fondo gris de referencia */
+  background-color: #e0e0e0;
+}
+
+@media (min-width: 768px) {
+  .slideshow-container {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 .slideshow-overlay {
   position: absolute;
   top: 0px;
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
   background: #677ce0;
   color: white;
-  padding: 5px 5px;
-  border-radius: 0px;
-  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 13px;
   font-weight: bold;
+  text-align: center;
 }
 
 .slideshow-image {
@@ -97,5 +111,3 @@
 .slideshow-container img {
   opacity: 1;
 }
-
-
